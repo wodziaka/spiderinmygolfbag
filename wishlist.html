@@ -1,17 +1,3 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-    <title>Wishlist</title>
-    <link rel="stylesheet" href="css/styles.css">
-</head>
-
-<body>
-
-<h1>Wishlist</h1>
-
-<div id="items" class="scroll-row"></div>
-
 <script src="js/csv-loader.js"></script>
 
 <script>
@@ -22,18 +8,34 @@ loadCSV("data/wishlist.csv").then(items => {
 
     items.forEach(item => {
 
+        const images = item.imageLinks.split(";");
+        const firstImage = images[0];
+
         container.innerHTML += `
             <div class="card">
-                <img src="${item.image}">
+
+                <img src="${firstImage}" alt="${item.name}">
+
                 <h2>${item.name}</h2>
-                <p>${item.brand}</p>
+
+                <p><strong>${item.brand}</strong></p>
+
                 <p>${item.category}</p>
+
+                <p>${item.color}</p>
+
+                <p>$${item.price}</p>
+
+                <p>${item.occasion}</p>
+
+                <button onclick="window.open('${item.link}')">
+                    View Item
+                </button>
+
             </div>
         `;
     });
+
 });
 
 </script>
-
-</body>
-</html>
