@@ -110,16 +110,14 @@ nav a:hover {
     color: var(--offwhite);
 }
 
-.panel:hover h1 {
-    color: var(--offwhite);
-}
-
 .panel h1 {
     font-size: 2.2rem;
     letter-spacing: 8px;
     margin: 0;
     text-align: center;
     transform: rotate(90deg);
+    color: inherit;
+    transition: color 0.4s ease;
 }
 
 /* -------------------
