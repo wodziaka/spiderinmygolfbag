@@ -8,8 +8,8 @@ loadCSV("data/wishlist.csv").then(items => {
 
     items.forEach(item => {
 
-        const images = item.imageLinks.split(";");
-        const firstImage = images[0];
+        const firstImage =
+            item.imageLinks.split(";")[0];
 
         container.innerHTML += `
             <div class="card">
@@ -21,8 +21,6 @@ loadCSV("data/wishlist.csv").then(items => {
                 <p><strong>${item.brand}</strong></p>
 
                 <p>${item.category}</p>
-
-                <p>${item.color}</p>
 
                 <p>$${item.price}</p>
 
