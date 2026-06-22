@@ -4,14 +4,15 @@ async function loadCSV(file) {
 
     const rows = text.trim().split("\n");
 
-    const headers = rows[0].split(",");
+    const headers = rows[0].split("\t");
 
     return rows.slice(1).map(row => {
-        const values = row.split(",");
+        const values = row.split("\t");
+
         let obj = {};
 
         headers.forEach((header, index) => {
-            obj[header] = values[index];
+            obj[header.trim()] = values[index]?.trim() || "";
         });
 
         return obj;
