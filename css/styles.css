@@ -111,11 +111,10 @@ nav a:hover {
 }
 
 .panel h1 {
-    writing-mode: vertical-rl;
-    transform: rotate(180deg);
     font-size: 2.2rem;
     letter-spacing: 8px;
     margin: 0;
+    text-align: center;
 }
 
 /* -------------------
