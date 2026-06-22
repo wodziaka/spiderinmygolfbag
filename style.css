@@ -1,8 +1,83 @@
+/* -------------------
+   COLOR PALETTE
+------------------- */
+
+:root {
+    --eggshell: #F5F1EA;
+    --offwhite: #FCFAF7;
+    --navy: #111827;
+    --brown: #3A2D26;
+    --taupe: #B8AA9C;
+    --border: #DDD6CF;
+    --shadow: rgba(17, 24, 39, 0.10);
+}
+
+/* -------------------
+   GLOBAL
+------------------- */
+
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background: #f7f4ef;
+    background: var(--eggshell);
+    color: var(--navy);
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    min-height: 100vh;
 }
+
+h1 {
+    font-size: 3rem;
+    font-weight: 300;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    color: var(--navy);
+    margin: 40px;
+}
+
+h2 {
+    color: var(--brown);
+    font-weight: 400;
+    letter-spacing: 2px;
+}
+
+h3 {
+    color: var(--navy);
+    margin-bottom: 10px;
+}
+
+p {
+    line-height: 1.5;
+    color: var(--brown);
+}
+
+/* -------------------
+   NAVIGATION
+------------------- */
+
+nav {
+    background: var(--navy);
+    padding: 20px 40px;
+}
+
+nav a {
+    color: var(--offwhite);
+    text-decoration: none;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: var(--taupe);
+}
+
+/* -------------------
+   HOMEPAGE
+------------------- */
 
 .home {
     display: flex;
@@ -11,40 +86,256 @@ body {
 
 .panel {
     flex: 1;
+    background: var(--eggshell);
+    border-right: 1px solid var(--border);
+
     display: flex;
     justify-content: center;
     align-items: center;
+
     text-decoration: none;
-    color: black;
-    border-right: 1px solid #ccc;
-    transition: 0.3s;
+    color: var(--navy);
+
+    transition: 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.panel:last-child {
+    border-right: none;
 }
 
 .panel:hover {
-    background: #ddd;
+    background: var(--navy);
+    color: var(--offwhite);
 }
 
-h1 {
+.panel h1 {
     writing-mode: vertical-rl;
     transform: rotate(180deg);
-    letter-spacing: 5px;
-}
-.scroll-row {
-    display: flex;
-    overflow-x: auto;
-    gap: 20px;
-    padding: 20px;
+    font-size: 2.2rem;
+    letter-spacing: 8px;
+    margin: 0;
 }
 
+/* -------------------
+   HORIZONTAL SCROLL
+------------------- */
+
+.scroll-row {
+    display: flex;
+    gap: 25px;
+    overflow-x: auto;
+    padding: 30px;
+    scroll-behavior: smooth;
+}
+
+.scroll-row::-webkit-scrollbar {
+    height: 10px;
+}
+
+.scroll-row::-webkit-scrollbar-track {
+    background: var(--border);
+}
+
+.scroll-row::-webkit-scrollbar-thumb {
+    background: var(--brown);
+    border-radius: 10px;
+}
+
+/* -------------------
+   CARD STYLING
+------------------- */
+
 .card {
-    min-width: 250px;
-    background: white;
-    padding: 15px;
-    border-radius: 15px;
-    box-shadow: 0 3px 10px rgba(0,0,0,.1);
+    min-width: 280px;
+    background: var(--offwhite);
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 8px 25px var(--shadow);
+    border: 1px solid var(--border);
+
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
 }
 
 .card img {
     width: 100%;
-    border-radius: 10px;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 15px;
+    margin-bottom: 15px;
+}
+
+/* -------------------
+   BUTTONS
+------------------- */
+
+button {
+    background: var(--navy);
+    color: var(--offwhite);
+
+    border: none;
+    padding: 12px 20px;
+
+    border-radius: 30px;
+
+    cursor: pointer;
+
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+
+    transition: 0.3s;
+}
+
+button:hover {
+    background: var(--brown);
+}
+
+/* -------------------
+   OUTFIT BUILDER
+------------------- */
+
+#outfit-board {
+    background: var(--offwhite);
+
+    border: 2px dashed var(--taupe);
+
+    border-radius: 25px;
+
+    margin: 30px;
+
+    min-height: 350px;
+
+    padding: 30px;
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.outfit-image {
+    width: 180px;
+    border-radius: 15px;
+
+    box-shadow: 0 5px 15px var(--shadow);
+}
+
+/* -------------------
+   PINTEREST GALLERY
+------------------- */
+
+.gallery {
+    columns: 3;
+    column-gap: 25px;
+    padding: 30px;
+}
+
+.gallery .card {
+    margin-bottom: 25px;
+    break-inside: avoid;
+}
+
+/* -------------------
+   FILTER BAR
+------------------- */
+
+.filters {
+    display: flex;
+    gap: 15px;
+    padding: 0 30px 30px 30px;
+    flex-wrap: wrap;
+}
+
+select {
+    padding: 10px 15px;
+
+    border-radius: 25px;
+
+    border: 1px solid var(--border);
+
+    background: var(--offwhite);
+
+    color: var(--brown);
+
+    font-size: 0.9rem;
+}
+
+/* -------------------
+   SEARCH BAR
+------------------- */
+
+input[type="text"] {
+    padding: 12px 18px;
+
+    border-radius: 25px;
+
+    border: 1px solid var(--border);
+
+    width: 300px;
+
+    background: var(--offwhite);
+
+    color: var(--navy);
+}
+
+/* -------------------
+   SECTION SPACING
+------------------- */
+
+section {
+    margin-bottom: 50px;
+}
+
+/* -------------------
+   LINKS
+------------------- */
+
+a {
+    color: var(--navy);
+}
+
+a:hover {
+    color: var(--brown);
+}
+
+/* -------------------
+   MOBILE
+------------------- */
+
+@media (max-width: 900px) {
+
+    .home {
+        flex-direction: column;
+    }
+
+    .panel {
+        height: 25vh;
+    }
+
+    .panel h1 {
+        writing-mode: horizontal-tb;
+        transform: none;
+        font-size: 2rem;
+    }
+
+    .gallery {
+        columns: 1;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .card {
+        min-width: 220px;
+    }
+
+    #outfit-board {
+        justify-content: center;
+    }
 }
