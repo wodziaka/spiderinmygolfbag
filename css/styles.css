@@ -115,7 +115,6 @@ nav a:hover {
     letter-spacing: 8px;
     margin: 0;
     text-align: center;
-    transform: rotate(90deg);
     color: inherit;
     transition: color 0.4s ease;
 }
