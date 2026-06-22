@@ -4,15 +4,16 @@
     <title>Wishlist</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
-
 <body>
-
+    
+<nav>
+    <a href="index.html">Home</a>
+</nav>
+    
 <h1>Wishlist</h1>
 
 <div id="items" class="scroll-row"></div>
-
 <script src="js/csv-loader.js"></script>
-
 <script>
 
 loadCSV("data/wishlist.tsv").then(items => {
@@ -28,16 +29,10 @@ loadCSV("data/wishlist.tsv").then(items => {
             <div class="card">
 
                 <img src="${firstImage}" alt="${item.name}">
-
                 <h2>${item.name}</h2>
-
                 <p><strong>${item.brand}</strong></p>
-
                 <p>${item.category}</p>
-
                 <p>$${item.price}</p>
-
-                <p>${item.occasion}</p>
 
                 <button onclick="window.open('${item.link}')">
                     View Item
