@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Wishlist</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+<h1>Wishlist</h1>
+
+<div id="items" class="scroll-row"></div>
+
+<script src="js/csv-loader.js"></script>
+
+<script>
+
+loadCSV("data/wishlist.csv").then(items => {
+
+    const container = document.getElementById("items");
+
+    items.forEach(item => {
+
+        container.innerHTML += `
+            <div class="card">
+                <img src="${item.image}">
+                <h2>${item.name}</h2>
+                <p>${item.brand}</p>
+                <p>${item.category}</p>
+            </div>
+        `;
+    });
+});
+
+</script>
+
+</body>
+</html>
