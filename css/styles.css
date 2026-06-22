@@ -2,10 +2,6 @@
    COLOR PALETTE
 ------------------- */
 
-body {
-    background: hotpink !important;
-}
-
 :root {
     --eggshell: #F5F1EA;
     --offwhite: #FCFAF7;
