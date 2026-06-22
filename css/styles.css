@@ -337,9 +337,30 @@ a:hover {
 
     .card {
         min-width: 220px;
+        display: flex;
+        flex-direction: column;
     }
 
     #outfit-board {
         justify-content: center;
     }
+   
+    .card {
+        display: flex;
+        flex-direction: column;
+   }
+   
+   .card p {
+        margin: 4px 0;
+        font-size: 0.9rem;
+    }
+
+   .card button {
+        margin-top: auto;
+   }
+
+   .card h2 {
+        font-size: 1.1rem;
+        line-height: 1.3;
+   }
 }
