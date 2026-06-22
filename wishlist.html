@@ -1,11 +1,8 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Wishlist</title>
-    <link rel="stylesheet" href="css/styles.css">
-</head>
-
 <body>
+
+<a href="index.html" class="home-button">
+    ← Home
+</a>
 
 <h1>Wishlist</h1>
 
@@ -14,7 +11,6 @@
 <script src="js/csv-loader.js"></script>
 
 <script>
-
 loadCSV("data/wishlist.tsv").then(items => {
 
     const container = document.getElementById("items");
@@ -48,8 +44,6 @@ loadCSV("data/wishlist.tsv").then(items => {
     });
 
 });
-
 </script>
 
 </body>
-</html>
