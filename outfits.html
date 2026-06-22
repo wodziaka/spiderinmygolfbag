@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Outfit Builder</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+<nav>
+    <a href="index.html">Home</a>
+</nav>
+
+<h1>Outfit Builder</h1>
+
+<h2>Select Items</h2>
+
+<div id="closet" class="scroll-row"></div>
+
+<h2>Your Outfit</h2>
+
+<div id="outfit-board"></div>
+
+<script src="js/csv-loader.js"></script>
+
+<script>
+
+const board = document.getElementById("outfit-board");
+const closet = document.getElementById("closet");
+
+function addToOutfit(image) {
+
+    board.innerHTML += `
+        <img src="${image}" class="outfit-image">
+    `;
+}
+
+Promise.all([
+    loadCSV("data/wishlist.csv"),
+    loadCSV("data/wardrobe.csv")
+]).then(([wishlist, wardrobe]) => {
+
+    const items = [...wishlist, ...wardrobe];
+
+    items.forEach(item => {
+
+        closet.innerHTML += `
+            <div class="card">
+                <img src="${item.image}">
+                <h3>${item.name}</h3>
+                <button onclick="addToOutfit('${item.image}')">
+                    Add to Outfit
+                </button>
+            </div>
+        `;
+    });
+
+});
+
+</script>
+
+</body>
+</html>
