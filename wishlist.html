@@ -1,3 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Wishlist</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    
+<nav class="wishlist-nav">
+    <a href="index.html">Home</a>
+    <div class="categories">
+        <button onclick="filterItems('all')">All</button>
+        <button onclick="filterItems('tops')">Tops</button>
+        <button onclick="filterItems('bottoms')">Bottoms</button>
+        <button onclick="filterItems('shoes')">Shoes</button>
+        <button onclick="filterItems('other')">Other</button>
+    </div>
+</nav>
+    
+<h1>Wishlist</h1>
+
+<div id="items" class="scroll-row"></div>
 <script src="js/csv-loader.js"></script>
 
 <script>
