@@ -172,6 +172,48 @@ nav a:hover {
 }
 
 /* -------------------
+   WISHLIST
+------------------- */
+
+.wishlist-nav {
+    background: var(--navy);
+    color: var(--offwhite);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 20px 40px;
+}
+
+.wishlist-nav a {
+    color: var(--offwhite);
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.categories {
+    display: flex;
+    gap: 20px;
+}
+
+.categories button {
+    background: none;
+    border: none;
+    color: var(--offwhite);
+
+    text-transform: uppercase;
+    letter-spacing: 2px;
+
+    cursor: pointer;
+}
+
+.categories button:hover {
+    color: var(--taupe);
+}
+
+/* -------------------
    BUTTONS
 ------------------- */
 
